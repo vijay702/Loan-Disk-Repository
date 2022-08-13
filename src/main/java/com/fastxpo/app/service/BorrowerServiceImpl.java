@@ -28,7 +28,10 @@ public class BorrowerServiceImpl implements BorrowerService {
 	
 	private BorrowerEntity mapToEntity(Borrower borrower) {
 		
-		borrower.ge
+		BorrowerEntity borrowerEntity = new BorrowerEntity();
+		
+		borrowerEntity.setFirstname(borrower.getFirstname());
+		
 		
 		
 		

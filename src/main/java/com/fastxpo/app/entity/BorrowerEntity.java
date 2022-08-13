@@ -166,6 +166,35 @@ public class BorrowerEntity {
 				+ ", landLinePhoneNumber=" + landLinePhoneNumber + ", workingStatus=" + workingStatus + ", creditScore="
 				+ creditScore + ", image=" + image + ", Descrption=" + Descrption + "]";
 	}
+	public BorrowerEntity(Long borrowerId, String firstname, String lastname, String businessName, List<String> country,
+			String licenceKey, String gender, String title, String mobile, String email, String dob, String address,
+			String city, String state, String zipCode, String landLinePhoneNumber, String workingStatus,
+			String creditScore, MultipartFile image, String descrption) {
+		super();
+		this.borrowerId = borrowerId;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.businessName = businessName;
+		this.country = country;
+		this.licenceKey = licenceKey;
+		this.gender = gender;
+		this.title = title;
+		Mobile = mobile;
+		Email = email;
+		Dob = dob;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+		this.landLinePhoneNumber = landLinePhoneNumber;
+		this.workingStatus = workingStatus;
+		this.creditScore = creditScore;
+		this.image = image;
+		Descrption = descrption;
+	}
+	public BorrowerEntity() {
+	
+	}
 	
 	
 	
