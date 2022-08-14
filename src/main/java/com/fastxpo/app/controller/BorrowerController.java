@@ -1,12 +1,15 @@
 package com.fastxpo.app.controller;
 
+import com.fastxpo.app.model.Borrower;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.fastxpo.app.model.CountryDto;
 import com.fastxpo.app.service.BorrowerService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/fastxpo")
@@ -15,19 +18,21 @@ public class BorrowerController {
 	
 	@Autowired
 	private BorrowerService borrowerService;
-	
-	
-	
-	
-	
-	public CountryDto getAllCountries() {
-		
-		
-		
-		return borrowerService.getAllCountries();
+
+	@GetMapping("country/{countryname}")
+	public List<CountryDto> getAllCountries(@PathVariable ("countryname") String countryName) {
+		return borrowerService.getAllCountries(countryName);
 		
 	}
-	
+
+	@PostMapping("/add-borrower")
+	public ResponseEntity<Borrower> addBorrower(@RequestBody Borrower borrower){
+
+		borrowerService.addBorrower(borrower);
+		return new ResponseEntity<>(HttpStatus.CREATED);
+
+	}
+
 	
 
 }

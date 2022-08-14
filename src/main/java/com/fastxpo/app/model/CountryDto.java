@@ -1,33 +1,17 @@
 package com.fastxpo.app.model;
 
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class CountryDto {
 	
-	private List<String> country;
+	private String countryName;
 
-	public List<String> getCountry() {
-		return country;
-	}
 
-	public void setCountry(List<String> country) {
-		this.country = country;
-	}
-
-	public CountryDto(List<String> country) {
-		super();
-		this.country = country;
-	}
-
-	public CountryDto() {
-	
-	}
-
-	@Override
-	public String toString() {
-		return "CountryDto [country=" + country + "]";
-	}
-	
-	
 
 }
